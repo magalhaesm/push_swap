@@ -6,13 +6,13 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 19:02:44 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/06 12:16:09 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/06 12:26:17 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	is_zero(char *str);
+static int	not_zero(char *str);
 static int	check_atoi(char *str, int *error);
 static int	has_duplicates(int *numbers, int size);
 
@@ -68,12 +68,12 @@ static int	check_atoi(char *str, int *error)
 	int nbr;
 
 	nbr = ft_atoi(str);
-	if (nbr == 0 && nbr != is_zero(str))
+	if (nbr == 0 && not_zero(str))
 		*error = TRUE;
 	return (nbr);
 }
 
-static int	is_zero(char *str)
+static int	not_zero(char *str)
 {
 	while (*str)
 	{
