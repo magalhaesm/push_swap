@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 19:02:44 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/06 12:26:17 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/06 13:36:06 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,12 @@ static int	has_duplicates(int *numbers, int size)
 
 static int	check_atoi(char *str, int *error)
 {
-	int nbr;
+	long	nbr;
 
-	nbr = ft_atoi(str);
+	nbr = ft_atol(str);
 	if (nbr == 0 && not_zero(str))
+		*error = TRUE;
+	else if (nbr > INT_MAX || nbr < INT_MIN)
 		*error = TRUE;
 	return (nbr);
 }

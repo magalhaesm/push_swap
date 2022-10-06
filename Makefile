@@ -1,7 +1,7 @@
 NAME = push_swap
 LIBFT = libft/libft.a
 
-SRC = push_swap.c parse.c
+SRC = push_swap.c parse.c utils.c
 SRCS = $(addprefix src/, $(SRC))
 
 INCLUDE = include/push_swap.h
