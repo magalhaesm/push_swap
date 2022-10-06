@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 19:02:44 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/06 11:56:41 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/06 11:59:49 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	*parse_int(int size, char **input)
 	n = size;
 	error = FALSE;
 	numbers = malloc(n * sizeof(*input));
+	if (numbers == NULL)
+		return (NULL);
 	while (n--)
 	{
 		nbr = check_atoi(input[n], &error);
