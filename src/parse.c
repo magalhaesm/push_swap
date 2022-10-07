@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 19:02:44 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/06 13:36:06 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/06 22:45:20 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +45,20 @@ int	*parse_int(int size, char **input)
 
 static int	has_duplicates(int *numbers, int size)
 {
-	int	evaluate;
+	int	eval;
 	int	next;
 
-	evaluate = 0;
-	while (evaluate < size)
+	eval = 0;
+	while (eval < size)
 	{
-		next = evaluate + 1;
+		next = eval + 1;
 		while (next < size)
 		{
-			if (numbers[evaluate] == numbers[next])
+			if (numbers[eval] == numbers[next])
 				return (TRUE);
 			next++;
 		}
-		evaluate++;
+		eval++;
 	}
 	return (FALSE);
 }
@@ -77,11 +77,13 @@ static int	check_atoi(char *str, int *error)
 
 static int	not_zero(char *str)
 {
+	if (*str == '-' || *str == '+')
+		str++;
 	while (*str)
 	{
 		if (*str != '0')
-			return (EXIT_FAILURE);
+			return (TRUE);
 		str++;
 	}
-	return (EXIT_SUCCESS);
+	return (FALSE);
 }
