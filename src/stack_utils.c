@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 20:29:25 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/09 13:14:58 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/09 17:24:12 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	push_bottom(t_stack **stack, t_stack *item)
 {
 	t_stack	*temp;
 
+	if (*stack == NULL || item == NULL)
+		return ;
 	temp = *stack;
 	while (temp->next)
 		temp = temp->next;
@@ -48,6 +50,8 @@ t_stack	*pop_bottom(t_stack **stack)
 	t_stack	*last;
 	int		size;
 
+	if (*stack == NULL)
+		return (NULL);
 	size = stack_size(*stack) - 2;
 	temp = *stack;
 	while (size--)
@@ -55,17 +59,4 @@ t_stack	*pop_bottom(t_stack **stack)
 	last = temp->next;
 	temp->next = NULL;
 	return (last);
-}
-
-int	stack_size(t_stack *stack)
-{
-	int	size;
-
-	size = 0;
-	while (stack != NULL)
-	{
-		stack = stack->next;
-		size++;
-	}
-	return (size);
 }
