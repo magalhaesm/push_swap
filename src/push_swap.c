@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:02:51 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/06 13:37:36 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/09 17:44:15 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,22 @@
 
 int	main(int argc, char **argv)
 {
-	int	*numbers;
+	int		size;
+	int		*numbers;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 
-	numbers = parse_int(argc - 1, argv + 1);
+	size = argc - 1;
+	numbers = parse_int(size, argv + 1);
 	if (numbers == NULL)
 		err_exit();
+	stack_a = init_stack(numbers, size);
+	if (stack_a == NULL)
+		err_exit();
+	stack_b = NULL;
+	create_index(&stack_a, numbers, size);
+	destroy_stack(&stack_a);
+	destroy_stack(&stack_b);
 	free(numbers);
 	return (EXIT_SUCCESS);
 }
