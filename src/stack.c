@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 20:01:41 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/09 08:58:37 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/09 12:58:14 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,21 @@ static t_stack	*new_item(int value)
 	number->index = -1;
 	number->next = NULL;
 	return (number);
+}
+
+int	is_sorted(t_stack *stack)
+{
+	int	index;
+
+	index = 0;
+	while (stack != NULL)
+	{
+		if (index != stack->index)
+			return (TRUE);
+		stack = stack->next;
+		index++;
+	}
+	return (FALSE);
 }
 
 void	destroy_stack(t_stack **top)
