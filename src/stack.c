@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 20:01:41 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/09 12:58:14 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/09 17:24:22 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,19 @@ int	is_sorted(t_stack *stack)
 		index++;
 	}
 	return (FALSE);
+}
+
+int	stack_size(t_stack *stack)
+{
+	int	size;
+
+	size = 0;
+	while (stack != NULL)
+	{
+		stack = stack->next;
+		size++;
+	}
+	return (size);
 }
 
 void	destroy_stack(t_stack **top)
