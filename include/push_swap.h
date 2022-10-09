@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:45:10 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/09 17:31:34 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/09 17:36:47 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,12 @@ int		is_sorted(t_stack *stack);
 
 void	push_a(t_stack **stack_a, t_stack **stack_b);
 void	push_b(t_stack **stack_a, t_stack **stack_b);
-
 void	rotate_a(t_stack **stack);
 void	rotate_b(t_stack **stack);
 void	rotate(t_stack **stack_a, t_stack **stack_b);
+void	reverse_rotate_a(t_stack **stack);
+void	reverse_rotate_b(t_stack **stack);
+void	reverse_rotate(t_stack **stack_a, t_stack **stack_b);
 
 
 #endif
