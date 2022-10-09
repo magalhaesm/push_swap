@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 20:29:25 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/09 12:45:34 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/09 12:52:12 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ t_stack	*pop(t_stack **stack)
 {
 	t_stack	*temp;
 
+	if (*stack == NULL)
+		return (NULL);
 	temp = *stack;
 	*stack = (*stack)->next;
 	return (temp);
