@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   indexing.c                                         :+:      :+:    :+:   */
+/*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 16:39:35 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/08 17:44:17 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/10 11:31:42 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	binary_search(int *arr, int size, int nb);
+static int	binary_search(int *array, int size, int nbr);
 static void	selection_sort(int *input, int size);
 
 void	create_index(t_stack **stack, int *input, int size)
@@ -56,23 +56,23 @@ static void	selection_sort(int *input, int size)
 	}
 }
 
-static int	binary_search(int *arr, int size, int nb)
+static int	binary_search(int *array, int size, int nbr)
 {
-	int	start;
+	int	low;
 	int	mid;
-	int	end;
+	int	high;
 
-	start = 0;
-	end = size - 1;
-	while (start <= end)
+	low = 0;
+	high = size - 1;
+	while (low <= high)
 	{
-		mid = (start + end) / 2;
-		if (nb < arr[mid])
-			end = mid - 1;
+		mid = (low + high) / 2;
+		if (nbr < array[mid])
+			high = mid - 1;
 		else
 		{
-			if (nb > arr[mid])
-				start = mid + 1;
+			if (nbr > array[mid])
+				low = mid + 1;
 			else
 				return (mid);
 		}
