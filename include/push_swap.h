@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:45:10 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/10 09:18:26 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/10 18:55:11 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	push(t_stack **stack, t_stack *item);
 t_stack	*pop(t_stack **stack);
 void	push_bottom(t_stack **stack, t_stack *item);
 t_stack	*pop_bottom(t_stack **stack);
-int		stack_size(t_stack *stack);
+int		get_size(t_stack *stack);
 int		is_sorted(t_stack *stack);
 
 void	push_a(t_stack **stack_a, t_stack **stack_b);

@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 20:01:41 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/10 14:59:15 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/10 18:55:45 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	is_sorted(t_stack *stack)
 	return (TRUE);
 }
 
-int	stack_size(t_stack *stack)
+int	get_size(t_stack *stack)
 {
 	int	size;
 

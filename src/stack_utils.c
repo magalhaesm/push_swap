@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 20:29:25 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/09 17:24:12 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/10 18:55:50 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ t_stack	*pop_bottom(t_stack **stack)
 
 	if (*stack == NULL)
 		return (NULL);
-	size = stack_size(*stack) - 2;
+	size = get_size(*stack) - 2;
 	temp = *stack;
 	while (size--)
 		temp = temp->next;
