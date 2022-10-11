@@ -2,7 +2,8 @@ NAME = push_swap
 LIBFT = libft/libft.a
 
 SRC = push_swap.c parse.c stack.c stack_utils.c index.c \
-			push.c swap.c rotate.c reverse_rotate.c utils.c
+			push.c swap.c rotate.c reverse_rotate.c utils.c   \
+			sort.c
 SRCS = $(addprefix src/, $(SRC))
 
 INCLUDE = include/push_swap.h
@@ -18,7 +19,11 @@ $(LIBFT):
 	@make -C libft --no-print-directory
 
 test:		$(NAME)	
-		$(eval ARG = $(shell shuf -i 0-500 -n 20))
+		$(eval ARG = $(shell shuf -i 0-99 -n 8))
+		./push_swap $(ARG)
+
+test20:		$(NAME)	
+		$(eval ARG = $(shell shuf -i 0-300 -n 20))
 		./push_swap $(ARG)
 
 clean:

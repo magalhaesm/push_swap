@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:45:10 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/10 18:55:11 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/11 14:05:21 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ typedef struct s_stack
 {
 	int				value;
 	int				index;
+	int				actual_pos;
+	int				target_pos;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -56,5 +58,7 @@ void	reverse_rotate(t_stack **stack_a, t_stack **stack_b);
 void	swap_a(t_stack **stack);
 void	swap_b(t_stack **stack);
 void	swap_same(t_stack **stack_a, t_stack **stack_b);
+
+void	sort_few(t_stack **stack);
 
 #endif
