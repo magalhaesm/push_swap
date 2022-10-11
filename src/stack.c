@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 20:01:41 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/10 18:55:45 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/11 10:05:09 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ static t_stack	*new_item(int value)
 		return (NULL);
 	number->value = value;
 	number->index = -1;
+	number->actual_pos = -1;
+	number->target_pos = -1;
 	number->next = NULL;
 	return (number);
 }

@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:01:38 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/11 14:10:47 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/11 20:27:56 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,6 @@ void	sort_all(t_stack **stack_a, t_stack **stack_b)
 	set_actual_position(stack_a);
 	set_actual_position(stack_b);
 	set_target_position(stack_a, stack_b);
-	// while (*stack_b)
-	// {
-	// 	set_actual_position(stack_a);
-	// 	set_actual_position(stack_b);
-	// 	push_a(stack_a, stack_b);
-	// }
 }
 
 static void	set_target_position(t_stack **stack_a, t_stack **stack_b)
@@ -49,18 +43,20 @@ static void	set_target_position(t_stack **stack_a, t_stack **stack_b)
 		closest_max = highest;
 		while (temp_a != NULL)
 		{
-			if (temp_b->index < temp_a->index && temp_a->index < closest_max)
+			if (temp_b->index < temp_a->index && temp_a->index <= closest_max)
+			{
+				temp_b->target_pos = temp_a->actual_pos;
 				closest_max = temp_a->index;
+			}
 			temp_a = temp_a->next;
 		}
-		temp_b->target_pos = closest_max;
 		if (temp_b->index > closest_max)
 			temp_b->target_pos = 0;
 		temp_b = temp_b->next;
 	}
 }
 
-static void set_actual_position(t_stack **stack)
+static void	set_actual_position(t_stack **stack)
 {
 	int		pos;
 	t_stack	*temp;
