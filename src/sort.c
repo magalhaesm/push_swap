@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 20:18:21 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/12 18:58:10 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/12 19:10:12 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	highest_position(t_stack *stack);
 
-void	sort_few(t_stack **stack)
+void	sort_three(t_stack **stack)
 {
 	int	highest;
 
@@ -27,7 +27,7 @@ void	sort_few(t_stack **stack)
 		reverse_rotate_a(stack);
 	else
 		swap_a(stack);
-	sort_few(stack);
+	sort_three(stack);
 }
 
 int	lowest_position(t_stack *stack)

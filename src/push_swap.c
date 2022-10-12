@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:02:51 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/11 14:16:00 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/12 19:10:48 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void	push_swap(t_stack **stack_a, t_stack **stack_b)
 	if (size == 2)
 		swap_a(stack_a);
 	else if (size == 3)
-		sort_few(stack_a);
+		sort_three(stack_a);
 	else
 		sort_all(stack_a, stack_b);
 }

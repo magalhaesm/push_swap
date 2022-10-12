@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -6,7 +7,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:45:10 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/12 19:06:51 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/12 18:02:18 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +63,10 @@ void	swap_a(t_stack **stack);
 void	swap_b(t_stack **stack);
 void	swap_same(t_stack **stack_a, t_stack **stack_b);
 
-void	sort_few(t_stack **stack);
+void	sort_three(t_stack **stack);
 int		lowest_position(t_stack *stack);
 void	sort_all(t_stack **stack_a, t_stack **stack_b);
-void	set_cost(t_stack **stack_a, t_stack **stack_b);
+void	set_costs(t_stack **stack_a, t_stack **stack_b);
 void	exec_cheapest(t_stack **stack_a, t_stack **stack_b);
 
 #endif
