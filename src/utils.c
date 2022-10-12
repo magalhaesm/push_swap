@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:10:02 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/06 13:36:28 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/12 14:55:43 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@ void	err_exit(void)
 {
 	ft_putendl_fd("Error", STDERR_FILENO);
 	exit(EXIT_FAILURE);
+}
+
+int	ft_abs(int n)
+{
+	if (n < 0)
+		return (-n);
+	return (n);
 }
 
 long	ft_atol(const char *nptr)
