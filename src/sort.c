@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 20:18:21 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/11 13:55:32 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/12 18:58:10 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,29 @@ void	sort_few(t_stack **stack)
 	else
 		swap_a(stack);
 	sort_few(stack);
+}
+
+int	lowest_position(t_stack *stack)
+{
+	int		min;
+	int		index;
+	t_stack	*temp;
+
+	min = INT_MAX;
+	index = 0;
+	temp = stack;
+	while (temp != NULL)
+	{
+		if (temp->index < min)
+			min = temp->index;
+		temp = temp->next;
+	}
+	while (stack->index != min)
+	{
+		index++;
+		stack = stack->next;
+	}
+	return (index);
 }
 
 static int	highest_position(t_stack *stack)

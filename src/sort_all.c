@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:01:38 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/12 14:23:14 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/12 19:01:29 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ static void	set_target_position(t_stack **stack_a, t_stack **stack_b)
 			}
 			temp_a = temp_a->next;
 		}
-		if (temp_b->index > closest_max)
-			temp_b->target_pos = 0;
+		if (temp_b->index > highest)
+			temp_b->target_pos = lowest_position(*stack_a);
 		temp_b = temp_b->next;
 	}
 }
