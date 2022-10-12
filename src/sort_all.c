@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:01:38 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/11 20:27:56 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/12 14:23:14 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	sort_all(t_stack **stack_a, t_stack **stack_b)
 	set_actual_position(stack_a);
 	set_actual_position(stack_b);
 	set_target_position(stack_a, stack_b);
+	set_cost(stack_a, stack_b);
 }
 
 static void	set_target_position(t_stack **stack_a, t_stack **stack_b)

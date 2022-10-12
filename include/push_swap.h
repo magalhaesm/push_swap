@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:45:10 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/11 14:05:21 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/12 14:25:09 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ typedef struct s_stack
 	int				index;
 	int				actual_pos;
 	int				target_pos;
+	int				cost_a;
+	int				cost_b;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -60,5 +62,7 @@ void	swap_b(t_stack **stack);
 void	swap_same(t_stack **stack_a, t_stack **stack_b);
 
 void	sort_few(t_stack **stack);
+void	sort_all(t_stack **stack_a, t_stack **stack_b);
+void	set_cost(t_stack **stack_a, t_stack **stack_b);
 
 #endif
