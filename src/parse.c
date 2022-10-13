@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 19:02:44 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/13 12:36:07 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/13 18:39:41 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ static int	check_int(char **input, int size)
 	while (size--)
 	{
 		str = input[size];
+		if (*str == '\0')
+			return (FALSE);
 		if (*str == '-' || *str == '+')
 			str++;
 		while (*str)
