@@ -6,15 +6,15 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 19:02:44 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/06 22:45:20 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/13 12:36:07 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	not_zero(char *str);
 static int	check_atoi(char *str, int *error);
 static int	has_duplicates(int *numbers, int size);
+static int	check_int(char **input, int size);
 
 int	*parse_int(int size, char **input)
 {
@@ -25,6 +25,8 @@ int	*parse_int(int size, char **input)
 
 	n = size;
 	error = FALSE;
+	if (check_int(input, size) == FALSE)
+		return (NULL);
 	numbers = malloc(n * sizeof(nbr));
 	if (numbers == NULL)
 		return (NULL);
@@ -41,6 +43,25 @@ int	*parse_int(int size, char **input)
 		return (NULL);
 	}
 	return (numbers);
+}
+
+static int	check_int(char **input, int size)
+{
+	char	*str;
+
+	while (size--)
+	{
+		str = input[size];
+		if (*str == '-' || *str == '+')
+			str++;
+		while (*str)
+		{
+			if (ft_isdigit(*str) == FALSE)
+				return (FALSE);
+			str++;
+		}
+	}
+	return (TRUE);
 }
 
 static int	has_duplicates(int *numbers, int size)
@@ -68,22 +89,7 @@ static int	check_atoi(char *str, int *error)
 	long	nbr;
 
 	nbr = ft_atol(str);
-	if (nbr == 0 && not_zero(str))
-		*error = TRUE;
-	else if (nbr > INT_MAX || nbr < INT_MIN)
+	if (nbr > INT_MAX || nbr < INT_MIN)
 		*error = TRUE;
 	return (nbr);
-}
-
-static int	not_zero(char *str)
-{
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str)
-	{
-		if (*str != '0')
-			return (TRUE);
-		str++;
-	}
-	return (FALSE);
 }
