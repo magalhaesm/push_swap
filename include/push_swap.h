@@ -68,5 +68,6 @@ int		lowest_position(t_stack *stack);
 void	sort_all(t_stack **stack_a, t_stack **stack_b);
 void	set_costs(t_stack **stack_a, t_stack **stack_b);
 void	exec_cheapest(t_stack **stack_a, t_stack **stack_b);
+void	align(t_stack **stack);
 
 #endif
