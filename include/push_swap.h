@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:45:10 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/13 12:31:57 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/13 17:23:08 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_stack
 	int				target_pos;
 	int				cost_a;
 	int				cost_b;
+	int				output;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -40,7 +41,7 @@ long	ft_atol(const char *nptr);
 int		ft_abs(int n);
 void	err_exit(void);
 
-t_stack	*init_stack(int *input, int size);
+t_stack	*init_stack(int *input, int size, int output);
 void	create_index(t_stack **stack, int *input, int size);
 void	destroy_stack(t_stack **top);
 void	push(t_stack **stack, t_stack *item);

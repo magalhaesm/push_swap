@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:02:51 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/12 19:10:48 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/13 17:33:16 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	numbers = parse_int(size, argv + 1);
 	if (numbers == NULL)
 		err_exit();
-	stack_a = init_stack(numbers, size);
+	stack_a = init_stack(numbers, size, TRUE);
 	if (stack_a == NULL)
 		err_exit();
 	stack_b = NULL;

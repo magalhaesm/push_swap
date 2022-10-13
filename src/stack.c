@@ -6,15 +6,15 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 20:01:41 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/11 10:05:09 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/13 17:24:30 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_stack	*new_item(int value);
+static t_stack	*new_item(int value, int output);
 
-t_stack	*init_stack(int *input, int size)
+t_stack	*init_stack(int *input, int size, int output)
 {
 	t_stack	*stack;
 	t_stack	*tmp;
@@ -23,10 +23,10 @@ t_stack	*init_stack(int *input, int size)
 	while (size--)
 	{
 		if (stack == NULL)
-			stack = new_item(input[size]);
+			stack = new_item(input[size], output);
 		else
 		{
-			tmp = new_item(input[size]);
+			tmp = new_item(input[size], output);
 			tmp->next = stack;
 			stack = tmp;
 		}
@@ -34,7 +34,7 @@ t_stack	*init_stack(int *input, int size)
 	return (stack);
 }
 
-static t_stack	*new_item(int value)
+static t_stack	*new_item(int value, int output)
 {
 	t_stack	*number;
 
@@ -45,6 +45,10 @@ static t_stack	*new_item(int value)
 	number->index = -1;
 	number->actual_pos = -1;
 	number->target_pos = -1;
+	if (output)
+		number->output = TRUE;
+	else
+		number->output = FALSE;
 	number->next = NULL;
 	return (number);
 }
