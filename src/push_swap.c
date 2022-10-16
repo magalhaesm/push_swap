@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:02:51 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/13 17:33:16 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/16 12:52:30 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	numbers = parse_int(size, argv + 1);
 	if (numbers == NULL)
 		err_exit();
-	stack_a = init_stack(numbers, size, TRUE);
+	stack_a = init_stack(numbers, size);
 	if (stack_a == NULL)
 		err_exit();
 	stack_b = NULL;
@@ -43,6 +43,7 @@ static void	push_swap(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
 
+	set_output(TRUE);
 	if (is_sorted(*stack_a))
 		return ;
 	size = get_size(*stack_a);

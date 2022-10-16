@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 20:16:34 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/13 17:32:09 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/16 12:38:38 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,20 @@ static void	swap(t_stack **stack);
 void	swap_a(t_stack **stack)
 {
 	swap(stack);
-	if ((*stack)->output)
-		ft_putendl_fd("sa", STDOUT_FILENO);
+	show_output("sa");
 }
 
 void	swap_b(t_stack **stack)
 {
 	swap(stack);
-	if ((*stack)->output)
-		ft_putendl_fd("sb", STDOUT_FILENO);
+	show_output("sb");
 }
 
 void	swap_same(t_stack **stack_a, t_stack **stack_b)
 {
 	swap(stack_a);
 	swap(stack_b);
-	if ((*stack_a)->output)
-		ft_putendl_fd("ss", STDOUT_FILENO);
+	show_output("ss");
 }
 
 static void	swap(t_stack **stack)

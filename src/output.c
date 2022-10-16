@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   output.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/09 17:33:07 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/16 12:39:13 by mdias-ma         ###   ########.fr       */
+/*   Created: 2022/10/16 12:46:26 by mdias-ma          #+#    #+#             */
+/*   Updated: 2022/10/16 12:50:29 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_rotate_a(t_stack **stack)
+static int	*get_output(void)
 {
-	push(stack, pop_bottom(stack));
-	show_output("rra");
+	static int	output;
+	return (&output);
 }
 
-void	reverse_rotate_b(t_stack **stack)
+void	show_output(char *action)
 {
-	push(stack, pop_bottom(stack));
-	show_output("rrb");
+	if (has_output())
+		ft_putendl_fd(action, STDOUT_FILENO);
 }
 
-void	reverse_rotate(t_stack **stack_a, t_stack **stack_b)
+int	set_output(int value)
 {
-	push(stack_a, pop_bottom(stack_a));
-	push(stack_b, pop_bottom(stack_b));
-	show_output("rrr");
+	int	*output;
+
+	output = get_output();
+	*output = value;
+	return (*output);
+}
+
+int	has_output(void)
+{
+	int	*output;
+
+	output = get_output();
+	return (*output);
 }
