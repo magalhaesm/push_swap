@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:33:07 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/16 12:39:13 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/17 11:42:05 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	reverse_rotate_b(t_stack **stack)
 	show_output("rrb");
 }
 
-void	reverse_rotate(t_stack **stack_a, t_stack **stack_b)
+void	reverse_rotate(t_stack **a, t_stack **b)
 {
-	push(stack_a, pop_bottom(stack_a));
-	push(stack_b, pop_bottom(stack_b));
+	push(a, pop_bottom(a));
+	push(b, pop_bottom(b));
 	show_output("rrr");
 }

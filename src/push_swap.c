@@ -6,13 +6,13 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:02:51 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/16 12:52:30 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/17 11:41:49 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	push_swap(t_stack **stack_a, t_stack **stack_b);
+static void	push_swap(t_stack **a, t_stack **b);
 
 int	main(int argc, char **argv)
 {
@@ -39,18 +39,18 @@ int	main(int argc, char **argv)
 	return (EXIT_SUCCESS);
 }
 
-static void	push_swap(t_stack **stack_a, t_stack **stack_b)
+static void	push_swap(t_stack **a, t_stack **b)
 {
 	int	size;
 
 	set_output(TRUE);
-	if (is_sorted(*stack_a))
+	if (is_sorted(*a))
 		return ;
-	size = get_size(*stack_a);
+	size = get_size(*a);
 	if (size == 2)
-		swap_a(stack_a);
+		swap_a(a);
 	else if (size == 3)
-		sort_three(stack_a);
+		sort_three(a);
 	else
-		sort_all(stack_a, stack_b);
+		sort_all(a, b);
 }

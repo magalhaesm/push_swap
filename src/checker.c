@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:49:07 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/17 11:36:49 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/17 11:40:13 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "push_swap.h"
 
 int		ft_strcmp(char *s1, char *s2);
-void	checker(t_stack **stack_a, t_stack **stack_b);
+void	checker(t_stack **a, t_stack **b);
 int		exec_valid(char *cmd, t_stack **a, t_stack **b);
 
 int	main(int argc, char **argv)

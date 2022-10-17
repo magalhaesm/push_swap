@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:45:10 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/16 12:51:03 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/17 11:44:09 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,23 +50,23 @@ t_stack	*pop_bottom(t_stack **stack);
 int		get_size(t_stack *stack);
 int		is_sorted(t_stack *stack);
 
-void	push_a(t_stack **stack_a, t_stack **stack_b);
-void	push_b(t_stack **stack_a, t_stack **stack_b);
+void	push_a(t_stack **a, t_stack **b);
+void	push_b(t_stack **a, t_stack **b);
 void	rotate_a(t_stack **stack);
 void	rotate_b(t_stack **stack);
-void	rotate(t_stack **stack_a, t_stack **stack_b);
+void	rotate(t_stack **a, t_stack **b);
 void	reverse_rotate_a(t_stack **stack);
 void	reverse_rotate_b(t_stack **stack);
-void	reverse_rotate(t_stack **stack_a, t_stack **stack_b);
+void	reverse_rotate(t_stack **a, t_stack **b);
 void	swap_a(t_stack **stack);
 void	swap_b(t_stack **stack);
-void	swap_same(t_stack **stack_a, t_stack **stack_b);
+void	swap_same(t_stack **a, t_stack **b);
 
 void	sort_three(t_stack **stack);
 int		lowest_position(t_stack *stack);
-void	sort_all(t_stack **stack_a, t_stack **stack_b);
-void	set_costs(t_stack **stack_a, t_stack **stack_b);
-void	exec_cheapest(t_stack **stack_a, t_stack **stack_b);
+void	sort_all(t_stack **a, t_stack **b);
+void	set_costs(t_stack **a, t_stack **b);
+void	exec_cheapest(t_stack **a, t_stack **b);
 void	align(t_stack **stack);
 
 int		set_output(int value);
