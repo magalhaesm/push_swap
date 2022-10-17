@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:10:02 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/12 14:55:43 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/17 11:53:38 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 static int	ft_isspace(char c);
 
-void	err_exit(void)
+void	err_exit(int code)
 {
 	ft_putendl_fd("Error", STDERR_FILENO);
-	exit(EXIT_FAILURE);
+	exit(code);
 }
 
 int	ft_abs(int n)
