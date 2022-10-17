@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:45:10 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/17 11:53:35 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/17 12:43:29 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,8 @@ void	align(t_stack **stack);
 int		set_output(int value);
 int		has_output(void);
 void	show_output(char *action);
+
+void	set_error(int value);
+int		error(void);
 
 #endif

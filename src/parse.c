@@ -6,41 +6,38 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 19:02:44 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/13 18:39:41 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/17 12:47:24 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	check_atoi(char *str, int *error);
-static int	has_duplicates(int *numbers, int size);
+static int	check_atoi(char *str);
 static int	check_int(char **input, int size);
+static void	check_duplicates(int *numbers, int size);
 
 int	*parse_int(int size, char **input)
 {
 	int	n;
 	int	nbr;
-	int	error;
 	int	*numbers;
 
 	n = size;
-	error = FALSE;
 	if (check_int(input, size) == FALSE)
-		return (NULL);
+		err_exit(EXIT_FAILURE);
 	numbers = malloc(n * sizeof(nbr));
 	if (numbers == NULL)
 		return (NULL);
 	while (n--)
 	{
-		nbr = check_atoi(input[n], &error);
-		if (error)
-			break ;
+		nbr = check_atoi(input[n]);
 		numbers[n] = nbr;
 	}
-	if (error || has_duplicates(numbers, size))
+	check_duplicates(numbers, size);
+	if (error())
 	{
 		free(numbers);
-		return (NULL);
+		err_exit(EXIT_FAILURE);
 	}
 	return (numbers);
 }
@@ -66,7 +63,7 @@ static int	check_int(char **input, int size)
 	return (TRUE);
 }
 
-static int	has_duplicates(int *numbers, int size)
+static void	check_duplicates(int *numbers, int size)
 {
 	int	eval;
 	int	next;
@@ -78,20 +75,22 @@ static int	has_duplicates(int *numbers, int size)
 		while (next < size)
 		{
 			if (numbers[eval] == numbers[next])
-				return (TRUE);
+			{
+				set_error(TRUE);
+				break ;
+			}
 			next++;
 		}
 		eval++;
 	}
-	return (FALSE);
 }
 
-static int	check_atoi(char *str, int *error)
+static int	check_atoi(char *str)
 {
 	long	nbr;
 
 	nbr = ft_atol(str);
 	if (nbr > INT_MAX || nbr < INT_MIN)
-		*error = TRUE;
+		set_error(TRUE);
 	return (nbr);
 }

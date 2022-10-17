@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 20:01:41 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/16 12:42:14 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/17 13:21:32 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,16 @@ t_stack	*init_stack(int *input, int size)
 		else
 		{
 			tmp = new_item(input[size]);
+			if (tmp == NULL)
+				break ;
 			tmp->next = stack;
 			stack = tmp;
 		}
+	}
+	if (error())
+	{
+		destroy_stack(&stack);
+		err_exit(EXIT_FAILURE);
 	}
 	return (stack);
 }
@@ -40,7 +47,10 @@ static t_stack	*new_item(int value)
 
 	number = malloc(sizeof(*number));
 	if (number == NULL)
+	{
+		set_error(TRUE);
 		return (NULL);
+	}
 	number->value = value;
 	number->index = -1;
 	number->actual_pos = -1;
