@@ -6,7 +6,7 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 12:46:26 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/16 12:50:29 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/17 11:38:42 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static int	*get_output(void)
 {
 	static int	output;
+
 	return (&output);
 }
 
