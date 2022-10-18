@@ -6,16 +6,15 @@
 /*   By: mdias-ma <mdias-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:49:07 by mdias-ma          #+#    #+#             */
-/*   Updated: 2022/10/17 13:24:30 by mdias-ma         ###   ########.fr       */
+/*   Updated: 2022/10/18 10:38:13 by mdias-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "push_swap.h"
 
 int		ft_strcmp(char *s1, char *s2);
 void	checker(t_stack **a, t_stack **b);
-int		exec_valid(char *cmd, t_stack **a, t_stack **b);
+void	exec_valid(char *cmd, t_stack **a, t_stack **b);
 
 int	main(int argc, char **argv)
 {
@@ -45,7 +44,6 @@ int	main(int argc, char **argv)
 void	checker(t_stack **a, t_stack **b)
 {
 	char	*cmd;
-	int		error;
 
 	set_output(FALSE);
 	cmd = "";
@@ -54,13 +52,13 @@ void	checker(t_stack **a, t_stack **b)
 		cmd = get_next_line(STDIN_FILENO);
 		if (cmd)
 		{
-			error = exec_valid(cmd, a, b);
+			exec_valid(cmd, a, b);
 			free(cmd);
-			if (error)
-				break ;
+			if (error())
+				close(STDIN_FILENO);
 		}
 	}
-	if (error)
+	if (error())
 	{
 		destroy_stack(a);
 		destroy_stack(b);
@@ -68,7 +66,7 @@ void	checker(t_stack **a, t_stack **b)
 	}
 }
 
-int	exec_valid(char *cmd, t_stack **a, t_stack **b)
+void	exec_valid(char *cmd, t_stack **a, t_stack **b)
 {
 	if (ft_strcmp(cmd, "sa\n") == 0)
 		swap_a(a);
@@ -93,8 +91,7 @@ int	exec_valid(char *cmd, t_stack **a, t_stack **b)
 	else if (ft_strcmp(cmd, "rrr\n") == 0)
 		reverse_rotate(a, b);
 	else
-		return (EXIT_FAILURE);
-	return (EXIT_SUCCESS);
+		set_error(TRUE);
 }
 
 int	ft_strcmp(char *s1, char *s2)
